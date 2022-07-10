@@ -1,5 +1,7 @@
+package demo01;
+
 /**
- * @ClassName TestThread
+ * @ClassName demo01.TestThread
  * @Author yang
  * @Description //TODO
  * @Date 22/07/10 16:32
