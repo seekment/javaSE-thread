@@ -13,17 +13,20 @@ import java.util.List;
 
 // 不安全的列表
 public class UnSafeList {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
         System.out.println("start");
         List<String> strings = new ArrayList<>();
 
 
         for (int i = 0; i < 1000; i++) {
             new Thread(() -> {
-                strings.add(Thread.currentThread().getName());
+                synchronized (strings) {
+                    strings.add(Thread.currentThread().getName());
+                }
             }).start();
             // System.out.println("size: "+ strings.size());
         }
+        Thread.sleep(300);
         System.out.println("size: " + strings.size());
     }
 }
