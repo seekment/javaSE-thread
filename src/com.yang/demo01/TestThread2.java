@@ -18,15 +18,24 @@ import sun.misc.BASE64Encoder;
 
 // 练习thread, 实现多线程同步下载图片
 public class TestThread2 extends Thread{
+    private String url;
+    private String name;
+
+  public   TestThread2(String url, String name){
+        this.name = name;
+        this.url = url;
+    }
     @Override
-    public void run(String url, String name) {
+    public void run() {
         //super.run();
         // WebDoenloader webDoenloader = new WebDoenloader();
         // webDoenloader.downLoader(url,name )
     }
 
     public static void main(String[] args) {
-        TestThread2 testThread2 = new TestThread2();
+         String url = "";
+         String name = "";
+        TestThread2 testThread2 = new TestThread2(url,name);
         testThread2.start();
         System.out.println();
     }
